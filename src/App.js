@@ -1,5 +1,5 @@
 import Container from '@mui/material/Container';
-import '../styles/styles.scss';
+import './styles/_Body.scss';
 
 function App() {
   return (

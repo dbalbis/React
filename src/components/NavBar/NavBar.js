@@ -1,4 +1,5 @@
-import '../styles/styles.scss';
+import '../../styles/_NavBar.scss';
+import CartWidget from '../CartWidget/CartWidget';
 
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
@@ -36,7 +37,7 @@ const NavBar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            TRASH
+            TRASHER
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -80,8 +81,9 @@ const NavBar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            TRASH
+            TRASHER
           </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -92,6 +94,9 @@ const NavBar = () => {
                 {page}
               </Button>
             ))}
+          </Box>
+          <Box sx={{ flexGrow: 0 }}>
+            <CartWidget />
           </Box>
         </Toolbar>
       </Container>

@@ -366,12 +366,6 @@ body {
   background-color: white;
 }
 
-/* Menu */
-
-.menuNavbar {
-  background-color: black;
-}
-
 /* /MENU */
 
 .ultimosProductos {
@@ -381,11 +375,6 @@ body {
     margin-top: 20px;
     color: black;
     text-align: center;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .css-h7cdpm-MuiTypography-root {
-    margin-right: 38px !important;
+    text-transform: uppercase;
   }
 }
