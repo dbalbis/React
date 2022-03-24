@@ -11,7 +11,7 @@ function ListProducts() {
         justifyContent="center"
         alignItems="center"
       >
-        <Grid item xs={4}>
+        <Grid item lg={4}>
           <Card
             titulo={'Remeron Essential Trip'}
             talle={'XL'}
@@ -19,7 +19,7 @@ function ListProducts() {
             stock={2}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item lg={4}>
           <Card
             titulo={'Buzo Essential Trip'}
             talle={'L'}
@@ -27,7 +27,7 @@ function ListProducts() {
             stock={5}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item lg={4}>
           <Card
             titulo={'Buzo Essential Lime'}
             talle={'M'}
@@ -42,7 +42,7 @@ function ListProducts() {
         justifyContent="center"
         alignItems="center"
       >
-        <Grid item xs={4}>
+        <Grid item lg={4}>
           <Card
             titulo={'Remeron Monkey Lime'}
             talle={'L'}
@@ -50,7 +50,7 @@ function ListProducts() {
             stock={4}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item lg={4}>
           <Card
             titulo={'Remeron Urban Cultur'}
             talle={'XL'}
@@ -58,7 +58,7 @@ function ListProducts() {
             stock={1}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item lg={4}>
           <Card
             titulo={'Remeron Parental'}
             talle={'S'}

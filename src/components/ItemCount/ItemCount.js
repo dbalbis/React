@@ -13,7 +13,7 @@ const ItemCount = ({ stock }) => {
       alert('Funciona');
     } else {
       alert('No funciona');
-      console.log(JSON.stringify(stock));
+      console.log({ stock });
     }
   };
 

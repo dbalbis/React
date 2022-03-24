@@ -14,11 +14,17 @@ div.itemlistContainer {
 }
 
 div.itemList {
-  margin: 25px;
+  box-shadow: 0px -5px 8px -2px rgba(0, 0, 0, 0.39);
+  -webkit-box-shadow: 0px -5px 8px -2px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: 0px -5px 8px -2px rgba(0, 0, 0, 0.39);
+
   h3 {
     margin-bottom: 5px;
   }
   p {
+    margin-bottom: 5px;
+  }
+  div.Talle {
     margin-bottom: 5px;
   }
   p.precio {
@@ -27,5 +33,6 @@ div.itemList {
   }
   button.btnComprar {
     margin-top: 5px;
+    margin-bottom: 15px;
   }
 }

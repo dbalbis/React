@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import '../../styles/_Card.scss';
 import Container from '@mui/material/Container';
 import ItemCount from '../ItemCount/ItemCount';
+import foto from '../../images/foto1.jpg';
 
 const Card = (props) => {
   return (
@@ -11,8 +12,11 @@ const Card = (props) => {
       <CssBaseline />
       <Container maxWidth="sm" className="itemlistContainer">
         <div className="itemList">
+          <div>
+            <img src={foto} alt="Remera" />
+          </div>
           <h3>{props.titulo}</h3>
-          <div>Talle: {props.talle} </div>
+          <div className="Talle">Talle: {props.talle} </div>
           <p className="precio">$ {props.precio}</p>
           <div>
             <ItemCount />
