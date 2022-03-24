@@ -10,9 +10,16 @@ const ItemCount = ({ stock }) => {
   const onAdd = () => {
     if (count < stock) {
       setCount(count + 1);
-      alert('Funciona');
     } else {
-      alert('No funciona');
+      alert('No tenemos tanto Stock');
+      console.log({ stock });
+    }
+  };
+
+  const onSub = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    } else {
       console.log({ stock });
     }
   };
@@ -32,6 +39,7 @@ const ItemCount = ({ stock }) => {
       <p>{count}</p>
 
       <IconButton
+        onClick={onSub}
         aria-label="restar"
         variant="contained"
         size="small"

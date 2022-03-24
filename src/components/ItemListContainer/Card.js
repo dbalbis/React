@@ -19,7 +19,7 @@ const Card = (props) => {
           <div className="Talle">Talle: {props.talle} </div>
           <p className="precio">$ {props.precio}</p>
           <div>
-            <ItemCount />
+            <ItemCount stock={props.stock} />
           </div>
           <Button variant="contained" size="small" className="btnComprar">
             Comprar

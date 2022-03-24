@@ -55,7 +55,7 @@ function ListProducts() {
             titulo={'Remeron Urban Cultur'}
             talle={'XL'}
             precio={1500}
-            stock={1}
+            stock={3}
           />
         </Grid>
         <Grid item lg={4}>
