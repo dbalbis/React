@@ -1,6 +1,6 @@
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Card from '../ItemListContainer/Card';
+import Card from '../Card/Card';
 
 function ListProducts() {
   return (
