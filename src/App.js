@@ -1,6 +1,6 @@
-import Container from '@mui/material/Container';
 import './styles/_Body.scss';
 import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ListProducts from './components/ListProducts/ListProducts';
 function App() {
   return (
@@ -8,9 +8,7 @@ function App() {
       <NavBar />
 
       <main>
-        <Container fixed className="ultimosProductos">
-          <h2>Nuestros Productos</h2>
-        </Container>
+        <ItemListContainer message="Nuestros Productos" />
         <ListProducts />
       </main>
     </>

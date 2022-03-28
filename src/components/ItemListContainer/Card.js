@@ -1,4 +1,3 @@
-import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Button from '@mui/material/Button';
 import '../../styles/_Card.scss';
@@ -8,7 +7,7 @@ import foto from '../../images/foto1.jpg';
 
 const Card = (props) => {
   return (
-    <React.Fragment>
+    <>
       <CssBaseline />
       <Container maxWidth="sm" className="itemlistContainer">
         <div className="itemList">
@@ -26,7 +25,7 @@ const Card = (props) => {
           </Button>
         </div>
       </Container>
-    </React.Fragment>
+    </>
   );
 };
 
