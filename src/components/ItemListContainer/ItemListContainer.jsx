@@ -23,38 +23,9 @@ const ItemListContainer = (props) => {
         justifyContent="center"
         alignItems="center"
         >
-        <Grid item lg={4}>
-        <CardList
-          />
-        </Grid>
-        <Grid item lg={4}>
-        <CardList
-          />
-        </Grid>
-        <Grid item lg={4}>
-        <CardList
-          />
-        </Grid>
-      </Grid>
-      <Grid
-        container
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Grid item lg={4}>
-        <CardList
-          />
-          
-        </Grid>
-        <Grid item lg={4}>
-        <CardList
-          />
-        </Grid>
-        <Grid item lg={4}>
-          <CardList
-          />
-        </Grid>
+        <CardList/>
+       
+        
       </Grid>
     </Container>
   );

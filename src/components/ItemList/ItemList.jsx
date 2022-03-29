@@ -2,6 +2,7 @@ import Card from '../Item/Item';
 import '../../styles/_ItemList.scss';
 import {productList} from '../../data/data.js'
 import { useEffect, useState } from 'react';
+import Grid from '@mui/material/Grid';
 
 
 
@@ -44,7 +45,9 @@ const CardList = () => {
                   
                   
       
-      
+                  <Grid item lg={4}>
+        
+        
                   <div key={product.id}>
                     <Card
                       name={product.name}
@@ -54,6 +57,7 @@ const CardList = () => {
                       id={product.id}
                     />
                   </div>
+                  </Grid>
                   
                   
                   
@@ -63,7 +67,7 @@ const CardList = () => {
             }
           </>
         ) : (
-          <p className='loadingText'>Cargando productos...</p>
+          <p className='loadingText'>Esto te va a encantar...</p>
         )      
     
   );
