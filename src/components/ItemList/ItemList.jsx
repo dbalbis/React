@@ -52,6 +52,7 @@ const CardList = () => {
                     <Card
                       name={product.name}
                       thumbnail={product.thumbnail}
+                      talle={product.talle}
                       price={product.price}
                       stock={product.stock}
                       id={product.id}
@@ -74,14 +75,3 @@ const CardList = () => {
 };
 
 export default CardList;
-  
-
-
-
-
-
-
-
-
-
-

@@ -14,12 +14,14 @@ div.itemlistContainer {
 }
 
 div.itemList {
-  box-shadow: 0px -5px 8px -2px rgba(0, 0, 0, 0.39);
-  -webkit-box-shadow: 0px -5px 8px -2px rgba(0, 0, 0, 0.39);
-  -moz-box-shadow: 0px -5px 8px -2px rgba(0, 0, 0, 0.39);
+  box-shadow: 0 4px 25px rgb(14 36 49 / 15%);
+  border-radius: 0.5rem;
+  overflow: hidden;
 
   h3 {
     margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 18px;
   }
   p {
     margin-bottom: 5px;
@@ -34,5 +36,22 @@ div.itemList {
   button.btnComprar {
     margin-top: 5px;
     margin-bottom: 15px;
+  }
+
+  img {
+    height: 480px;
+    max-width: 100%;
+    cursor: pointer;
+    transition: 1s;
+    width: auto;
+  }
+  img:hover {
+    transform: scale(1.1);
+  }
+  div.detailsContainer {
+    margin-bottom: 15px;
+  }
+  div.itemDetail {
+    padding-top: 20px;
   }
 }

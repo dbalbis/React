@@ -1,0 +1,45 @@
+div.itemDetailConteiner {
+  margin-top: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-shadow: 0 4px 25px rgb(14 36 49 / 15%);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: fit-content;
+  img {
+    max-width: auto;
+
+    cursor: pointer;
+    transition: 1s;
+    width: auto;
+  }
+
+  img:hover {
+    transform: scale(1.1);
+  }
+
+  h3 {
+    font-size: 35px;
+  }
+  div.Talle {
+    font-size: 20px;
+  }
+  p.precio {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  p.detailDesc {
+    margin-bottom: 5px;
+  }
+
+  button.btnComprarDetail {
+    background-color: #c0392b;
+    margin-top: 25px;
+    width: 200px;
+  }
+
+  button.btnComprarDetail:hover {
+    background-color: #cd3d2e;
+  }
+}

@@ -8,14 +8,15 @@ const Card = ({ name, thumbnail, price, id, talle, stock }) => {
   return (
     <>
       <CssBaseline />
-      <Container maxWidth="sm" className="itemlistContainer">
+      <Container  maxWidth="sm" className="itemlistContainer">
 
 
         
         <div className="itemList">
-          <div>
+          <div className="imgContainer">
             <img src= {thumbnail} alt="Remera" />
           </div>
+          <div className='itemDetail'>
           <h3>{name}</h3>
           <div className="Talle">Talle: {talle} </div>
           <p className="precio">$ {price}</p>
@@ -25,12 +26,15 @@ const Card = ({ name, thumbnail, price, id, talle, stock }) => {
           <Button variant="contained" size="small" className="btnComprar">
             Comprar
           </Button>
-        </div>
-        <div>
-          <Button href="#text-buttons" size="small">
+          
+          <div className='detailsContainer'>
+          <Button className ="btnDetalles" href="#text-buttons" size="small">
             VER DETALLES
           </Button>
+          </div>
         </div>
+        </div>
+        
       </Container>
     </>
   );

@@ -1,33 +1,38 @@
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
-import '../../styles/_ItemListContainer.scss';
+import '../../styles/_ItemDetail.scss';
 
+import ItemDetailCard from '../ItemDetailList/ItemDetailList';
 
-
-import CardList from '../ItemList/ItemList';
-const ItemList = (props) => {
+const ItemDetailContainer = (props) => {
   return (
     <>
-      <Container fixed className="ultimosProductos">
-        <h2>{props.message}</h2>
-      </Container>
       
       
       
-      
-      <Container maxWidth="xl">
+      <Container className = "itemDetailConteiner" maxWidth="xl">
       <Grid
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
         >
-        <CardList/>
+        <ItemDetailCard/>
        
         
       </Grid>
     </Container>
+        
+       
+        
+      
+      
+
+      
+
+      
+      
   
 
 
@@ -43,5 +48,4 @@ const ItemList = (props) => {
   );
 };
 
-export default ItemList;
-
+export default ItemDetailContainer;
