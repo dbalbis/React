@@ -130,7 +130,7 @@ const NavBar = () => {
                 'aria-labelledby': 'basic-button',
               }}
             >
-              <Link to="/remerones">
+              <Link to="/remerones" className="productosItem">
                 <MenuItem onClick={handleClose}>Remerones</MenuItem>
               </Link>
               <Link to="/buzos">
