@@ -8,48 +8,38 @@ import { useParams } from 'react-router-dom';
 
 
 
-const CardList = () => {
-  const {category} = useParams ()
-  const [products, setProducts] = useState([])
+const CardList = ({children}) => {
+  
+    const { category } = useParams()
 
-  const getProducts = new Promise ((resolve, reject) => {
-    setTimeout(() => {
-      resolve(productList);
-    },
-    2000);
-  }
-  )
+    const [products, setProducts] = useState([])
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const getProductsFromDB = async () => {
-    try {
-      const result = await getProducts
-      setProducts(result)
-    } catch (error) {
-      console.log (error)
-      alert('Algo salio mal')
+    const getProducts = () => {
+        return new Promise((resolve, reject) => {
+            return resolve(productList)
+        })
+    } 
+
+    useEffect( () => {
+        setProducts([])
+        getProducts().then( (productos) => {
+            category ? filterProductByCategory(productos, category) : setProducts(productos)
+        })
+    }, [category])
+
+
+    const filterProductByCategory = (array , category) => {
+        return array.map( (product, i) => {
+            if(product.category === category) {
+               return setProducts(products => [...products, product]);
+            }
+            return null;
+        })
     }
-  }
-
-  useEffect(() => {
-    console.log('categoria', category)
-    filteProductsByCategory (products, category)
-    getProductsFromDB();
-  }, [getProductsFromDB,category]);
-
-const filteProductsByCategory = (array , category) => {
-  return array.map ((product) => {
-    if(product.category == category ) {
-      return setProducts (product)
-    }  
-  })
-}
-
-
-  return (
+return (
     
       
-        products.length ? ( 
+        
           <>
             {
               products.map((product) => {
@@ -79,11 +69,11 @@ const filteProductsByCategory = (array , category) => {
               })
             }
           </>
-        ) : (
-          <p className='loadingText'>Esto te va a encantar...</p>
-        )      
+            
     
   );
 };
 
 export default CardList;
+
+
