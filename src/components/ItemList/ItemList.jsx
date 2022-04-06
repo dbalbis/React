@@ -3,12 +3,13 @@ import '../../styles/_ItemList.scss';
 import {productList} from '../../data/data.js'
 import { useEffect, useState } from 'react';
 import Grid from '@mui/material/Grid';
+import { useParams } from 'react-router-dom';
 
 
 
 
 const CardList = () => {
-
+  const {category} = useParams ()
   const [products, setProducts] = useState([])
 
   const getProducts = new Promise ((resolve, reject) => {
@@ -31,8 +32,19 @@ const CardList = () => {
   }
 
   useEffect(() => {
+    console.log('categoria', category)
+    filteProductsByCategory (products, category)
     getProductsFromDB();
-  }, [getProductsFromDB]);
+  }, [getProductsFromDB,category]);
+
+const filteProductsByCategory = (array , category) => {
+  return array.map ((product) => {
+    if(product.category == category ) {
+      return setProducts (product)
+    }  
+  })
+}
+
 
   return (
     

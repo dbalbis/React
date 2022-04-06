@@ -6,6 +6,8 @@ export const productList = [
     price: 1200,
     stock: 5,
     thumbnail: '/images/foto3.jpg',
+    category: 'Buzos',
+    desc: 'Buzo Canguro, con capucha y bordado 3d en el frente. Material: Rustico Liviano Color: Batik',
   },
   {
     id: 2,
@@ -14,6 +16,8 @@ export const productList = [
     price: 1000,
     stock: 4,
     thumbnail: '/images/foto5.jpg',
+    category: 'Remerones',
+    desc: 'Buzo Canguro, con capucha y bordado 3d en el frente. Material: Rustico Liviano Color: Batik',
   },
 
   {
@@ -23,6 +27,8 @@ export const productList = [
     price: 1500,
     stock: 3,
     thumbnail: '/images/foto6.jpg',
+    category: 'Remerones',
+    desc: 'Buzo Canguro, con capucha y bordado 3d en el frente. Material: Rustico Liviano Color: Batik',
   },
 
   {
@@ -32,6 +38,8 @@ export const productList = [
     price: 950,
     stock: 6,
     thumbnail: '/images/foto7.jpg',
+    category: 'Remerones',
+    desc: 'Buzo Canguro, con capucha y bordado 3d en el frente. Material: Rustico Liviano Color: Batik',
   },
 
   {
@@ -41,6 +49,8 @@ export const productList = [
     price: 500,
     stock: 2,
     thumbnail: '/images/foto2.jpg',
+    category: 'Remerones',
+    desc: 'Buzo Canguro, con capucha y bordado 3d en el frente. Material: Rustico Liviano Color: Batik',
   },
 
   {
@@ -50,5 +60,7 @@ export const productList = [
     price: 1800,
     stock: 3,
     thumbnail: '/images/foto4.jpg',
+    category: 'Buzos',
+    desc: 'Buzo Canguro, con capucha y bordado 3d en el frente. Material: Rustico Liviano Color: Batik',
   },
 ];
