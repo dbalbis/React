@@ -23,14 +23,10 @@ const Card = ({ name, thumbnail, price, id, talle, stock }) => {
           <div className='itemDetail'>
           <h3>{name}</h3>
           <div className="Talle">Talle: {talle} </div>
-          <p className="precio">$ {price}</p>
+          <p className="precio">${price}</p>
           <div>
             <ItemCount stock={stock} />
           </div>
-          <Button variant="contained" size="small" className="btnComprar">
-            Comprar
-          </Button>
-          
           <div className='detailsContainer'>
           <Link to={`/productos/${id}`}>
           <Button className ="btnDetalles"  size="small">

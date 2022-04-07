@@ -1,7 +1,19 @@
-import Button from '@mui/material/Button';
+
 import Grid from '@mui/material/Grid';
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetailCard = ({ name, thumbnail, price, id, talle, stock, desc }) => {
+
+  const addProduct = (cant) => {
+       
+    alert (`Has agregado ${cant} producto/s`)
+    
+    
+
+   
+   
+}
+
   return (
     <>
     
@@ -19,12 +31,16 @@ const ItemDetailCard = ({ name, thumbnail, price, id, talle, stock, desc }) => {
           <h3>{name}</h3>
           <p className = "detailDesc">{desc}</p>
           <div className="Talle">Talle: {talle} </div>
-          <p className="precio">$ {price}</p>
+          
+          <p className="precio">${price}</p>
+          
+          <div className='btnComprarDetail'>
+          <p className='mostrarCantidad'>Cantidad:<ItemCount stock={stock} addProduct={addProduct} /></p>
+          
+          </div>
           
           
-          <Button variant="contained" size="small" className="btnComprarDetail">
-            Comprar
-          </Button>
+          
           
           
 
