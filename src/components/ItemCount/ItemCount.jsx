@@ -4,11 +4,11 @@ import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
 import IconButton from '@mui/material/IconButton';
 import { Button } from '@mui/material';
 import '../../styles/_ItemCount.scss';
-import { Link } from 'react-router-dom';
 
 
 
-const ItemCount = ({ stock, addProduct }) => {
+
+const ItemCount = ({ stock, addProduct,action }) => {
   const [count, setCount] = useState(1);
 
   const onAdd = () => {
@@ -16,7 +16,7 @@ const ItemCount = ({ stock, addProduct }) => {
       setCount(count + 1);
     } else {
       alert('No tenemos tanto Stock');
-      console.log({ stock });
+      
     }
   };
 
@@ -24,9 +24,11 @@ const ItemCount = ({ stock, addProduct }) => {
     if (count > 1) {
       setCount(count - 1);
     } else {
-      console.log({ stock });
+      
     }
   };
+
+
 
   return (
     <>
@@ -54,11 +56,11 @@ const ItemCount = ({ stock, addProduct }) => {
       >
         <RemoveOutlinedIcon />
       </IconButton>
-      <div><Link to='/cart'>
-      <Button onClick={() => addProduct(count)}  variant="contained" size="small" className="btnComprar btnComprarDetail">
-            Comprar
+      <div>
+      <Button onClick={(e) => action(e, count)}  variant="contained" size="small" className="btnComprar btnComprarDetail">
+            Agregar al Carrito
           </Button>
-          </Link>
+          
           </div>
     </>
   );

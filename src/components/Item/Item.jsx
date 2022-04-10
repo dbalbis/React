@@ -4,8 +4,25 @@ import '../../styles/_Card.scss';
 import Container from '@mui/material/Container';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
+import React,{useEffect, useState} from "react";
 
 const Card = ({ name, thumbnail, price, id, talle, stock }) => {
+  const [productQuantity, setProductQuantity] = useState(0);
+  const [mostrarItemCount, setMostrarItemCount] = useState(true);
+  
+  const onAdd = (e, count) => {
+    if(!!e & productQuantity<1){
+        setProductQuantity(count);
+    }
+  }
+  useEffect(()=>{
+    if(productQuantity>0){
+        setMostrarItemCount(false);
+        
+    }
+  },[productQuantity])
+  
+  console.log("Cantidad de Productos", productQuantity)
   return (
     <>
       <CssBaseline />
@@ -24,8 +41,19 @@ const Card = ({ name, thumbnail, price, id, talle, stock }) => {
           <h3>{name}</h3>
           <div className="Talle">Talle: {talle} </div>
           <p className="precio">${price}</p>
-          <div>
-            <ItemCount stock={stock} />
+          
+          <div className='btnFinalizarCompra'>
+          {mostrarItemCount ?(
+                        <ItemCount stock={stock} initial={1} action={onAdd}/>
+                        ):( <div>
+                                <Link to='/cart'>
+                                <Button  variant="contained" size="small" color="success" className="btnComprarDetail">Finalizar Compra
+                                </Button>
+                            </Link>
+                            </div>
+                        )
+                    }
+          
           </div>
           <div className='detailsContainer'>
           <Link to={`/productos/${id}`}>
