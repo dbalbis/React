@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
 import IconButton from '@mui/material/IconButton';
 import { Button } from '@mui/material';
 import '../../styles/_ItemCount.scss';
 
+import CartContext from '../../Context/CartContext';
+
 
 
 
 const ItemCount = ({ stock, addProduct,action }) => {
+  const {addProductToCart, cartProducts} = useContext(CartContext);
   const [count, setCount] = useState(1);
 
   const onAdd = () => {
@@ -27,6 +30,13 @@ const ItemCount = ({ stock, addProduct,action }) => {
       
     }
   };
+
+  const addToCart = (e) =>{
+    e.stopPropagation()
+    console.log("Productos agregados:",cartProducts
+    )
+    
+}
 
 
 

@@ -8,23 +8,26 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Productos from './pages/Productos';
 import Cart from './pages/Cart';
+import { CartProvider } from './Context/CartContext';
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/contacto" element={<Contact />} />
-          <Route path="/lanzamientos" element={<Lanzamientos />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/:category/" element={<HomePage />} />
-          <Route path="/productos" element={<Productos />} />
-          <Route path="/productos/:id" element={<ItemDetailContainer />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/contacto" element={<Contact />} />
+            <Route path="/lanzamientos" element={<Lanzamientos />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/:category/" element={<HomePage />} />
+            <Route path="/productos" element={<Productos />} />
+            <Route path="/productos/:id" element={<ItemDetailContainer />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
     </>
   );
 }
