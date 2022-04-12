@@ -2,12 +2,15 @@ import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import ItemCount from '../ItemCount/ItemCount';
-import React,{useEffect, useState} from "react";
+import React,{useEffect, useState, useContext} from "react";
+import CartContext from "../../Context/CartContext";
 
 
-const ItemDetailCard = ({ name, thumbnail, price, id, talle, stock, desc }) => {
+const ItemDetailCard = ({ product }) => {
+  const {name, thumbnail, price, id, talle, stock, desc} = product
   const [productQuantity, setProductQuantity] = useState(0);
 const [mostrarItemCount, setMostrarItemCount] = useState(true);
+const {addProductToCart} = useContext(CartContext);
 
 const onAdd = (e, count) => {
   if(!!e & productQuantity<1){
@@ -17,6 +20,7 @@ const onAdd = (e, count) => {
 useEffect(()=>{
   if(productQuantity>0){
       setMostrarItemCount(false);
+      addProductToCart(product, productQuantity);
       
   }
 },[productQuantity])

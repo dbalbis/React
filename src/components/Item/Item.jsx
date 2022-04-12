@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 import React,{useEffect, useState, useContext} from "react";
 import CartContext from '../../Context/CartContext';
 
-const Card = ({ name, thumbnail, price, id, talle, stock }) => {
+const Card = ({ product }) => {
+  const {name, thumbnail, price, id, talle, stock, } = product
   const [productQuantity, setProductQuantity] = useState(0);
   const [mostrarItemCount, setMostrarItemCount] = useState(true);
   const {addProductToCart} = useContext(CartContext);
@@ -20,10 +21,10 @@ const Card = ({ name, thumbnail, price, id, talle, stock }) => {
   useEffect(()=>{
       if(productQuantity>0){
           setMostrarItemCount(false);
-          addProductToCart(name, productQuantity);
+          addProductToCart(product, productQuantity);
       }
   },[productQuantity]) 
-  console.log("Cantidad de Productos", productQuantity)  
+  /* console.log("Cantidad de Productossss", productQuantity) */  
   return (
     <>
       <CssBaseline />

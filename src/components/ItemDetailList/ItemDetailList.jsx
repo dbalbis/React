@@ -3,6 +3,7 @@ import ItemDetailCard from "../ItemDetail/ItemDetail";
 import {productList} from '../../data/data.js'
 import {useParams} from 'react-router-dom'
 
+
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState([])
   const {id} = useParams()
@@ -26,13 +27,8 @@ const filterProductById = (array, id) => {
 return (
   <>
   <ItemDetailCard 
-            thumbnail={product.thumbnail} 
-            name={product.name}
-            talle={product.talle}
-            price={product.price}
-            stock={product.stock}
-            id={product.id}
-            desc={product.desc} />
+            product={product}
+            key={product.id} />
   </>
   
   )

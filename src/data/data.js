@@ -44,7 +44,7 @@ export const productList = [
 
   {
     id: 10,
-    name: 'Buzo Crop Top Not a Brand',
+    name: 'Buzo Top Brand',
     talle: 'S',
     price: 2800,
     stock: 6,
