@@ -28,7 +28,7 @@ const CartProvider = ({ children }) => {
         }else{
           
       //si da el stock, sumo
-            console.log("existe y se agrega el maximo de stock");
+            console.log("existe y se agrega");
             cartProducts[prodEncontrado].cantidad += productQuantity;
         }
         
