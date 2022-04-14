@@ -1,5 +1,5 @@
 import { Container } from "@mui/material"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { Button } from "@mui/material"
 import CartContext from "../Context/CartContext"
 
@@ -7,7 +7,17 @@ import '../styles/_Cart.scss'
 
 
 const Cart = () => {
-  const {cartProducts, removeItem, clearCart} = useContext(CartContext)
+  const {cartProducts, removeItem, clearCart, cartTotal, addProductToCart} = useContext(CartContext)
+  const [totalDelCart, setTotalDelCart] = useState(cartTotal);
+
+  const handleOneLess = (id) =>{
+    setTotalDelCart(cartTotal);
+}
+const handleOneMore = (product, uno) =>{
+    addProductToCart(product, uno);
+    setTotalDelCart(cartTotal);
+}
+
   return (
     <>
     <Container className="cartContainer">
@@ -20,6 +30,7 @@ const Cart = () => {
                               )
                             })}
                             <Button onClick={clearCart}>Vaciar Carrito</Button>
+                            <h3>Total:{cartTotal()}</h3>
     </Container>
     </>
   )

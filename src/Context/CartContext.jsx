@@ -45,11 +45,33 @@ const CartProvider = ({ children }) => {
     setCartProducts(cartProducts.filter(p => p.id !== id));
 }
 
+/* Cantidad de Items CartWidget */
+const cartCantProductos = () => {
+  let cantidad = 0;
+  for(const producto of cartProducts){
+      cantidad = cantidad + producto.cantidad;
+      
+  }
+  return cantidad }
+
   /* Vaciar Carrito */
 
   const clearCart = () => {
     setCartProducts([])
   }
+
+  /* Total */
+
+  const cartTotal = () => {
+    //precio total de los productos en el carrito considerando sus cantidades
+    let total = 0;
+    cartProducts.map((product)=>{
+        total = total + product.price*product.cantidad;
+    });
+    return total
+}
+
+  
 
   
     
@@ -60,7 +82,9 @@ const CartProvider = ({ children }) => {
     cartProducts,
     addProductToCart,
     removeItem,
-    clearCart
+    clearCart,
+    cartCantProductos,
+    cartTotal
     
     
   };

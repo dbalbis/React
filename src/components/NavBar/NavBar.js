@@ -154,7 +154,7 @@ const NavBar = () => {
             ))}
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-            <CartWidget cartNumber="5" />
+            <CartWidget />
           </Box>
         </Toolbar>
       </Container>
