@@ -7,7 +7,7 @@ import CartContext from "../../Context/CartContext";
 
 
 const ItemDetailCard = ({ product }) => {
-  const {name, thumbnail, price, id, talle, stock, desc} = product
+  const {name, thumbnail, price, talle, stock, desc} = product
   const [productQuantity, setProductQuantity] = useState(0);
 const [mostrarItemCount, setMostrarItemCount] = useState(true);
 const {addProductToCart} = useContext(CartContext);
@@ -23,6 +23,7 @@ useEffect(()=>{
       addProductToCart(product, productQuantity);
       
   }
+// eslint-disable-next-line react-hooks/exhaustive-deps
 },[productQuantity])
 
 console.log("Cantidad de Productos", productQuantity)
