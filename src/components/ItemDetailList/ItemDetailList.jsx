@@ -1,28 +1,39 @@
 import {useState, useEffect} from "react"
 import ItemDetailCard from "../ItemDetail/ItemDetail";
-import {productList} from '../../data/data.js'
-import {useParams} from 'react-router-dom'
+import {useParams, useNavigate} from 'react-router-dom'
+import { doc, getDoc } from "firebase/firestore";
+import db from "../../firebase";
+
 
 
 const ItemDetailContainer = () => {
+  const navigate = useNavigate()
   const [product, setProduct] = useState([])
   const {id} = useParams()
+  
   console.log('id de ruta:',id)
   
+  const newLocal = async () => {
+    const docRef = doc(db, "productos", id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+      let product = docSnap.data();
+      product.id = docSnap.id;
+      setProduct(product);
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+      navigate('/pages/404')
+    }
+  };
+  const getProduct = newLocal
 
 useEffect(() => {
-  console.log('Mock productos:', productList)
-  filterProductById(productList, id) }, [id])
+  getProduct()
+},[getProduct, id])
 
-const filterProductById = (array, id) => {
-  // eslint-disable-next-line array-callback-return
-  return array.map((product) => {
-    console.log ("map product")
-    // eslint-disable-next-line eqeqeq
-    if (product.id == id) {
-      return setProduct (product)    }
-  } )
-}
 
 return (
   <>

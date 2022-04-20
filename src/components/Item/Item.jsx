@@ -23,7 +23,7 @@ const Card = ({ product }) => {
           setMostrarItemCount(false);
           addProductToCart(product, productQuantity);
       }
-  },[productQuantity]) 
+  },[addProductToCart, product, productQuantity]) 
   /* console.log("Cantidad de Productossss", productQuantity) */  
   return (
     <>
