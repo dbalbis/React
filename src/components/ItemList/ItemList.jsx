@@ -1,9 +1,10 @@
 import Card from '../Item/Item';
 import '../../styles/_ItemList.scss';
-import {productList} from '../../data/data.js'
 import { useEffect, useState } from 'react';
 import Grid from '@mui/material/Grid';
 import { useParams } from 'react-router-dom';
+import {collection, getDocs} from 'firebase/firestore'
+import db from '../../firebase'
 
 
 
@@ -14,15 +15,25 @@ const CardList = ({children}) => {
 
     const [products, setProducts] = useState([])
 
-    const getProducts = () => {
-        return new Promise((resolve, reject) => {
-            return resolve(productList)
-        })
+    const getProducts = async () => {
+      const itemCollection = collection (db, 'productos')
+      const productoSnapshot = await getDocs(itemCollection)
+      const productList = productoSnapshot.docs.map((doc) => {
+        let product = doc.data()
+        product.id = doc.id
+        
+        return product
+        
+      }
+
+      )
+      return productList
+        
     } 
 
     useEffect( () => {
         setProducts([])
-        getProducts().then( (productos) => {
+        getProducts().then( (productos ) => {
             category ? filterProductByCategory(productos, category) : setProducts(productos)
         })
     }, [category])
