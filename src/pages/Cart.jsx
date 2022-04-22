@@ -52,7 +52,7 @@ const Cart = () => {
                                         <p className="buttonClear">
                                         <Button onClick={clearCart}>Vaciar Carrito</Button></p>
                                         <p className="cartTotal">Total: ${cartTotal()}</p>
-                                        <p className="checkoutButton"><Button variant="contained" size="large" color ="success">Checkout</Button></p>
+                                        <Link to='/checkout'><p className="checkoutButton"><Button variant="contained" size="large" color ="success">Checkout</Button></p></Link>
                 </Container> 
               )}
 

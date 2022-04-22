@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Productos from './pages/Productos';
 import Cart from './pages/Cart';
 import { CartProvider } from './Context/CartContext';
+import Checkout from './pages/Checkout';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/contacto" element={<Contact />} />
             <Route path="/lanzamientos" element={<Lanzamientos />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/:category/" element={<HomePage />} />
             <Route path="/productos" element={<Productos />} />
             <Route path="/productos/:id" element={<ItemDetailContainer />} />
