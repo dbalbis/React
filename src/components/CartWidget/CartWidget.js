@@ -19,7 +19,8 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 
 const CartWidget = () => {
-  const { cartProducts, removeItem } = useContext(CartContext);
+  const { cartProducts, cartCantProductos, removeItem } =
+    useContext(CartContext);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -55,7 +56,7 @@ const CartWidget = () => {
                 aria-expanded={open ? 'true' : undefined}
               >
                 <div className="containerCartWidget">
-                  <p className="cartCounter">{cartProducts.length}</p>
+                  <p className="cartCounter">{cartCantProductos()}</p>
                   <ShoppingCartOutlinedIcon sx={{ width: 29, height: 29 }} />
                 </div>
               </IconButton>

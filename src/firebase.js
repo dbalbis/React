@@ -6,8 +6,8 @@ import { getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyB4XzzuwZCYMq3-2FdQDnLljteqfxba_mo',
-  authDomain: 'trashclothes---ecommerce.firebaseapp.com',
+  apiKey: `${process.env.REACT_APP_API_KEY}`,
+  authDomain: `${process.env.REACT_APP_AUTH_DOMAIN}`,
   projectId: 'trashclothes---ecommerce',
   storageBucket: 'trashclothes---ecommerce.appspot.com',
   messagingSenderId: '516967350784',

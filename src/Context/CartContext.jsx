@@ -19,6 +19,7 @@ const CartProvider = ({ children }) => {
       );
       product.cantidad = productQuantity;
       setCartProducts((cartProducts) => [...cartProducts, product]);
+      cartCantProductos();
     } else {
       //si ya existe valido que no se quiera agregar más de lo que hay en stock
       if (product.stock < product.cantidad + productQuantity) {
@@ -27,6 +28,7 @@ const CartProvider = ({ children }) => {
         //si da el stock, sumo
         console.log('existe y se agrega');
         cartProducts[prodEncontrado].cantidad += productQuantity;
+        cartCantProductos();
       }
     }
   };
