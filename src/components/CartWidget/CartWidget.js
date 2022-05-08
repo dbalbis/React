@@ -35,10 +35,7 @@ const CartWidget = () => {
       {!cartProducts.length ? (
         <div className="containerCartWidget">
           <Tooltip title="No tienes items en el carrito!">
-            <ShoppingCartOutlinedIcon
-              title="Tienes items en el carrito!"
-              sx={{ width: 29, height: 29 }}
-            />
+            <ShoppingCartOutlinedIcon sx={{ width: 29, height: 29 }} />
           </Tooltip>
         </div>
       ) : (
@@ -102,19 +99,31 @@ const CartWidget = () => {
               return (
                 <MenuItem className="cartWidget" key={cartProduct.id}>
                   <div className="cartWidgetImg">
-                    <img
-                      src={`${cartProduct.thumbnail}`}
-                      alt={cartProduct.name}
-                    />
+                    <Link
+                      className="productNameWidget"
+                      to={`/productos/${cartProduct.id}`}
+                    >
+                      <img
+                        src={`${cartProduct.thumbnail}`}
+                        alt={cartProduct.name}
+                      />
+                    </Link>
                   </div>
                   <div className="CartWidgetInfo">
-                    <p>{cartProduct.name}</p>
-                    <p className="cartWidgetCantidad">
-                      Cantidad: {cartProduct.cantidad}
-                    </p>
-                    <p>${cartProduct.price}</p>
-                    <p>
+                    <Link
+                      className="productNameWidget"
+                      to={`/productos/${cartProduct.id}`}
+                    >
+                      <p>{cartProduct.name}</p>
+
+                      <p className="cartWidgetCantidad">
+                        Cantidad: {cartProduct.cantidad}
+                      </p>
+                      <p>${cartProduct.price * cartProduct.cantidad}</p>
+                    </Link>
+                    <p title="Remover Item">
                       <DeleteIcon
+                        title={'hola'}
                         onClick={() => removeItem(cartProduct.id)}
                         className="cartDeleteIcon"
                         sx={{ width: 20, height: 20 }}

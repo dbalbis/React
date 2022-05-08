@@ -16,11 +16,12 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 
 const pages = [
-  { title: 'Lanzamientos', url: '/lanzamientos' },
+  { title: 'Lanzamientos', url: '/lanzamientos', key: 'lanzamientos' },
 
   {
     title: 'Contacto',
     url: '/contacto',
+    key: 'contacto',
   },
 ];
 
@@ -89,9 +90,9 @@ const NavBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page.key} onClick={handleCloseNavMenu}>
                   <Link className="menuItem" to={page.url} textalign="center">
-                    {page.title}
+                    "{page.title}"
                   </Link>
                 </MenuItem>
               ))}
@@ -142,9 +143,9 @@ const NavBar = () => {
             </Menu>
 
             {pages.map((page) => (
-              <Link to={page.url}>
+              <Link to={page.url} key={page.key}>
                 <Button
-                  key={page}
+                  key={page.key}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >

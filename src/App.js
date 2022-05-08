@@ -10,6 +10,7 @@ import Productos from './pages/Productos';
 import Cart from './pages/Cart';
 import { CartProvider } from './Context/CartContext';
 import Checkout from './pages/Checkout';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/productos/:id" element={<ItemDetailContainer />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
       </CartProvider>
     </>

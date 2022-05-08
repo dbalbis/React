@@ -24,8 +24,15 @@ p.cartCounter {
 
 .cartWidgetContainer .MuiMenu-list{
   width: 350px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 500px;
   
 
+}
+
+.cartWidgetContainer .MuiPaper-root.MuiPaper-elevation p {
+  color: black;
 }
 
 div.cartWidget{
@@ -41,6 +48,14 @@ div.cartWidgetImg {
 }
 
 div.CartWidgetInfo{
+  a.productNameWidget{
+    text-decoration: none;
+    :visited{
+      text-decoration: none;
+      color: black;
+    }
+    
+  }
   width: 60%;
   padding-left: 10px;
   padding-right: 10px;
@@ -53,6 +68,9 @@ div.CartWidgetInfo{
   }
   p.cartWidgetCantidad{
     font-size: 11px;
+  }
+  button{
+    color: black;
   }
 }
 

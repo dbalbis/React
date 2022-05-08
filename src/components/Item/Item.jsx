@@ -30,7 +30,7 @@ const Card = ({ product }) => {
     <>
       <CssBaseline />
       <Container maxWidth="sm" className="itemlistContainer">
-        <div className="itemList">
+        <div className="itemList" key={id}>
           <Link to={`/productos/${id}`}>
             <div className="imgContainer">
               <img src={thumbnail} alt="Remera" />

@@ -1,0 +1,31 @@
+body{
+  position:relative;
+  padding-bottom: 15rem;
+  min-height: 100vh;
+}
+
+div.footerContainer{
+  position: absolute;
+  bottom: 0;
+  justify-content: space-between;
+  vertical-align: middle;
+  display: flex;
+  margin-top: 35px;
+  height: 70px;
+  width: 100%;
+  background-color: black;
+
+p  {
+  font-size: 13px;
+  color: white;
+  align-self: center;
+  }
+
+div.footerIcons{
+  align-self: center;
+}
+img{
+  margin-left: 20px;
+}
+
+}

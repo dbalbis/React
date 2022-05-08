@@ -4,6 +4,7 @@ const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([]);
+  const [cuantosProductos, setCuantosProductos] = useState();
 
   const addProductToCart = (product, productQuantity) => {
     //ya existe el producto en el carrito?
@@ -44,6 +45,7 @@ const CartProvider = ({ children }) => {
     for (const producto of cartProducts) {
       cantidad = cantidad + producto.cantidad;
     }
+    setCuantosProductos(cantidad);
     return cantidad;
   };
 
@@ -51,6 +53,23 @@ const CartProvider = ({ children }) => {
 
   const clearCart = () => {
     setCartProducts([]);
+  };
+
+  /* Restar un item */
+  const restarUno = (id) => {
+    //primero ubico el indice del producto dentro del array
+    const prodEncontrado = cartProducts.findIndex((producto) => {
+      return producto.id === id;
+    });
+    if (prodEncontrado === -1) {
+      return;
+    } else {
+      //para que reste solo hasta 0 y no aparezcan números negativos
+      if (cartProducts[prodEncontrado].cantidad > 1) {
+        cartProducts[prodEncontrado].cantidad -= 1;
+        cartCantProductos();
+      }
+    }
   };
 
   /* Total */
@@ -67,11 +86,13 @@ const CartProvider = ({ children }) => {
 
   const data = {
     cartProducts,
+    cuantosProductos,
     addProductToCart,
     removeItem,
     clearCart,
     cartCantProductos,
     cartTotal,
+    restarUno,
   };
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;

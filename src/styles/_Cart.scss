@@ -26,6 +26,13 @@ button.deleteIconCart{
   color: black;
 }
 
+h3.subTotal{
+  font-weight: 600;
+    font-size: 22px;
+  text-align: right;
+  margin-bottom: 15px;
+}
+
   padding-top: 60px;
   h1{
     text-align: center;
@@ -62,6 +69,9 @@ button.deleteIconCart{
     margin-top: 15px;
     margin-bottom: 15px;
     
+  }
+  span.productCantidad{
+    font-size: 18px;
   }
   
 }
