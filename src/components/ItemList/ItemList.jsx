@@ -45,7 +45,7 @@ const CardList = ({ children }) => {
       {products.map((product) => {
         return (
           <Grid item lg={4} key={product.id}>
-            <div key={product.id}>
+            <div>
               <Card product={product} />
             </div>
           </Grid>
