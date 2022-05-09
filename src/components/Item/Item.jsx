@@ -25,7 +25,7 @@ const Card = ({ product }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productQuantity]);
-  /* console.log("Cantidad de Productossss", productQuantity) */
+
   return (
     <>
       <CssBaseline />

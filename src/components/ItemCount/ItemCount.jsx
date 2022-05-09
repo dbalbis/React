@@ -7,11 +7,8 @@ import '../../styles/_ItemCount.scss';
 
 import CartContext from '../../Context/CartContext';
 
-
-
-
-const ItemCount = ({ stock, addProduct,action }) => {
-  const {addProductToCart, cartProducts} = useContext(CartContext);
+const ItemCount = ({ stock, addProduct, action }) => {
+  const { addProductToCart, cartProducts } = useContext(CartContext);
   const [count, setCount] = useState(1);
 
   const onAdd = () => {
@@ -19,7 +16,6 @@ const ItemCount = ({ stock, addProduct,action }) => {
       setCount(count + 1);
     } else {
       alert('No tenemos tanto Stock');
-      
     }
   };
 
@@ -27,22 +23,15 @@ const ItemCount = ({ stock, addProduct,action }) => {
     if (count > 1) {
       setCount(count - 1);
     } else {
-      
     }
   };
 
-  const addToCart = (e) =>{
-    e.stopPropagation()
-    console.log("Productos agregados:",cartProducts
-    )
-    
-}
-
-
+  const addToCart = (e) => {
+    e.stopPropagation();
+  };
 
   return (
     <>
-      
       <IconButton
         disabled={count === stock ? true : false}
         onClick={onAdd}
@@ -67,11 +56,15 @@ const ItemCount = ({ stock, addProduct,action }) => {
         <RemoveOutlinedIcon />
       </IconButton>
       <div>
-      <Button onClick={(e) => action(e, count)}  variant="contained" size="small" className="btnComprar btnComprarDetail">
-            Agregar al Carrito
-          </Button>
-          
-          </div>
+        <Button
+          onClick={(e) => action(e, count)}
+          variant="contained"
+          size="small"
+          className="btnComprar btnComprarDetail"
+        >
+          Agregar al Carrito
+        </Button>
+      </div>
     </>
   );
 };

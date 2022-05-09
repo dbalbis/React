@@ -1,14 +1,11 @@
 import { Container } from '@mui/material';
 import { useContext, useState } from 'react';
 import { Button } from '@mui/material';
-
 import CartContext from '../Context/CartContext';
 import { Link } from 'react-router-dom';
-
 import FormHelperText from '@mui/material/FormHelperText';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import db from '../firebase';
 import { addDoc, collection } from 'firebase/firestore';
 import '../styles/_Checkout.scss';
@@ -65,7 +62,6 @@ const Checkout = () => {
     date: todayDate,
     total: cartTotal(),
   });
-  console.log('order', order);
 
   const [successOrder, setSuccessOrder] = useState();
 
@@ -83,7 +79,7 @@ const Checkout = () => {
   const pushOrder = async (prevOrder) => {
     const orderFirebase = collection(db, 'ordenes');
     const orderDoc = await addDoc(orderFirebase, prevOrder);
-    console.log('Orden generada', orderDoc.id);
+
     setSuccessOrder(orderDoc.id);
   };
 
@@ -93,10 +89,7 @@ const Checkout = () => {
       ...formData,
       [name]: value,
     });
-    console.log('target', e.target.value, e.target.name);
   };
-
-  console.log('Fecha:', todayDate);
 
   return (
     <>
@@ -164,10 +157,8 @@ const Checkout = () => {
                   maxWidth: '100%',
                 }}
               >
-                <Typography gutterBottom variant="h5">
-                  Datos de envio
-                </Typography>
-                {console.log('Objeto', formData)}
+                <h1>Datos de envío</h1>
+
                 <form onSubmit={handleSubmit}>
                   <TextField
                     onChange={handleChange}

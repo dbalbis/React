@@ -1,23 +1,58 @@
+.slider {
+  padding-top: 105px;
+}
+
 .ultimosProductos {
+  
   h2 {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding-top: 75px;
-    text-decoration: underline;
     font-weight: 750;
-
+    margin-top: 25px;
     color: black;
-    font-size: xx-large;
+    font-size: x-large;
     text-align: center;
     text-transform: uppercase;
   }
 }
 
-div.sliderContainer{
-  padding-top: 150px;
-  img{
-    width: 50px;
-    height: 50px;
-  }
+/* SLIDER */
+
+.swiper {
+  width: 100%;
+  height: 100%;
 }
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+  color: #C0392B
+}
+
+
 
