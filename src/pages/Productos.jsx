@@ -1,9 +1,7 @@
 import ItemListContainer from '../components/ItemListContainer/ItemListContainer';
 
 const Productos = () => {
-  return (
-    <ItemListContainer message="Productos" />
-  )
-}
+  return <ItemListContainer />;
+};
 
-export default Productos
+export default Productos;
