@@ -39,7 +39,13 @@ div.itemDetailConteiner {
     background-color: #c0392b;
     margin-top: 16px;
     width: 200px;
-  }
+    @media screen and (max-width: 576px) {
+      margin-bottom: 25px;
+      
+      
+    }
+
+  
 
   button.btnComprarDetail:hover {
     background-color: #cd3d2e;
@@ -49,6 +55,15 @@ div.itemDetailConteiner {
    
     margin-top: 16px;
     width: 200px;
+    @media screen and (max-width: 576px) {
+    margin-bottom: 25px;
+      
+      
+    }
+
+      
+      
+    }
   }
 
 

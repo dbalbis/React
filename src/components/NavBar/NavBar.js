@@ -89,10 +89,22 @@ const NavBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
+              <Link className="menuItem" to="/">
+                <MenuItem onClick={handleCloseNavMenu}>Inicio</MenuItem>
+              </Link>
+              <Link className="menuItem" to="/remerones">
+                <MenuItem onClick={handleCloseNavMenu}>Remerones</MenuItem>
+              </Link>
+              <Link className="menuItem" to="/buzos">
+                <MenuItem onClick={handleCloseNavMenu}>Buzos</MenuItem>
+              </Link>
+              <Link className="menuItem" to="/pantalones">
+                <MenuItem onClick={handleCloseNavMenu}>Pantalones</MenuItem>
+              </Link>
               {pages.map((page) => (
                 <MenuItem key={page.key} onClick={handleCloseNavMenu}>
                   <Link className="menuItem" to={page.url} textalign="center">
-                    "{page.title}"
+                    {page.title}
                   </Link>
                 </MenuItem>
               ))}

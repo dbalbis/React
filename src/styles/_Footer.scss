@@ -19,13 +19,29 @@ p  {
   font-size: 13px;
   color: white;
   align-self: center;
+  @media screen and (max-width: 576px) {
+    text-align: center;
+    
+    
+  }
   }
 
 div.footerIcons{
   align-self: center;
+  @media screen and (max-width: 576px) {
+    display: none;
+    
+    
+  }
 }
 img{
   margin-left: 20px;
+  @media screen and (max-width: 576px) {
+    
+    margin-left: 1px
+    
+    
+  }
 }
 
 }

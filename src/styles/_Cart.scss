@@ -24,6 +24,11 @@ div.cartContainerItems{
   
 button.deleteIconCart{
   color: black;
+  @media screen and (max-width: 576px) {
+    
+    
+    
+  }
 }
 
 h3.subTotal{
@@ -36,6 +41,11 @@ h3.subTotal{
   padding-top: 60px;
   h1{
     text-align: center;
+    @media screen and (max-width: 576px) {
+      margin-bottom: 25px;
+      
+      
+    }
   }
 
   p.cartTotal{
@@ -57,11 +67,25 @@ h3.subTotal{
     float: right;
     font-size: 22px;
     font-weight: 500;
+    @media screen and (max-width: 576px) {
+      font-size: 15px;
+      float: none;
+      text-align: right;
+      margin-left: 50px;
+      
+      
+      
+    }
   }
 
   span.itemProps{
     font-size: 22px;
     font-weight: 500;
+    @media screen and (max-width: 576px) {
+      font-size: 15px;
+      
+      
+    }
 
   }
 
@@ -72,6 +96,11 @@ h3.subTotal{
   }
   span.productCantidad{
     font-size: 18px;
+    @media screen and (max-width: 576px) {
+      font-size: 15px;
+      
+      
+    }
   }
   
 }
